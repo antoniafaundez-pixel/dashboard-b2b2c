@@ -1,3 +1,142 @@
 # dashboard-b2b2c
 Dashboard B2B2C - Análisis GB Semanal
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard B2B2C - Semanas 1-22</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);padding:20px;color:#333;min-height:100vh}
+.container{max-width:1400px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.header{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:50px 40px;text-align:center;border-radius:20px 20px 0 0}
+.header h1{font-size:2.8em;margin-bottom:15px;text-shadow:2px 2px 4px rgba(0,0,0,.2)}
+.header p{font-size:1.3em;opacity:.95;margin:10px 0}
+.badge{background:rgba(255,255,255,.25);padding:10px 18px;border-radius:25px;display:inline-block;margin:8px;font-size:.95em;font-weight:500}
+.content{padding:40px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;margin:40px 0}
+.metric{background:linear-gradient(135deg,#667eea,#764ba2);color:#fff;padding:35px;border-radius:15px;box-shadow:0 10px 30px rgba(102,126,234,.3);transition:all .3s}
+.metric:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(102,126,234,.4)}
+.metric h3{font-size:.95em;text-transform:uppercase;letter-spacing:2px;opacity:.9;margin-bottom:12px}
+.metric .value{font-size:2.5em;font-weight:700;margin:10px 0}
+.metric .sub{font-size:.95em;opacity:.85;margin-top:10px}
+.section{margin:60px 0}
+.section h2{color:#667eea;font-size:2.2em;margin-bottom:30px;padding-bottom:15px;border-bottom:3px solid #667eea}
+table{width:100%;border-collapse:collapse;margin:25px 0;box-shadow:0 4px 20px rgba(0,0,0,.08);border-radius:12px;overflow:hidden}
+th{background:#667eea;color:#fff;padding:20px;text-align:left;font-weight:600;font-size:1.05em}
+td{padding:18px 20px;border-bottom:1px solid #eee;font-size:.98em}
+tr:hover{background:#f8f9fa}
+tr:nth-child(even){background:#f9fafb}
+.badge-sm{display:inline-block;padding:5px 12px;border-radius:18px;font-size:.88em;font-weight:600}
+.badge-success{background:#d4edda;color:#155724}
+.badge-info{background:#d1ecf1;color:#0c5460}
+.badge-warning{background:#fff3cd;color:#856404}
+.insights{background:linear-gradient(135deg,#f8f9fa,#e9ecef);padding:35px;border-radius:15px;margin:40px 0;border-left:6px solid #667eea;box-shadow:0 4px 15px rgba(0,0,0,.05)}
+.insights h2{color:#667eea;margin-bottom:20px}
+.insights ul{margin-left:25px;line-height:2.2em}
+.insights li{margin:12px 0}
+.insights strong{color:#667eea}
+.footer{background:#f8f9fa;padding:35px;text-align:center;color:#666;border-top:3px solid #eee;border-radius:0 0 20px 20px}
+.highlight{background:linear-gradient(135deg,#ffeaa7,#fdcb6e);padding:2px 8px;border-radius:4px;font-weight:600}
+@media (max-width:768px){.metrics{grid-template-columns:1fr}.header h1{font-size:2em}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📊 Dashboard B2B2C</h1>
+<p>Análisis de Gross Booking por Partner, Producto y Destino</p>
+<div style="margin-top:20px">
+<span class="badge">🗓 Semanas 1-22 (2026)</span>
+<span class="badge">📍 Chile & Perú</span>
+<span class="badge">🤝 23 Partners</span>
+<span class="badge">🔄 Actualizado: 26 Mayo 2026</span>
+</div>
+</div>
+
+<div class="content">
+<div class="metrics">
+<div class="metric">
+<h3>💰 GB USD Total</h3>
+<div class="value">$61,035,494</div>
+<div class="sub">22 semanas acumuladas</div>
+</div>
+<div class="metric">
+<h3>📈 Revenue WL</h3>
+<div class="value">$5,622,932</div>
+<div class="sub">9.2% del GB</div>
+</div>
+<div class="metric">
+<h3>💎 FVM Total</h3>
+<div class="value">$1,273,144</div>
+<div class="sub">Future Value Margin</div>
+</div>
+<div class="metric">
+<h3>🛒 Transacciones</h3>
+<div class="value">58,482</div>
+<div class="sub">$1,044 GB/TX promedio</div>
+</div>
+<div class="metric">
+<h3>👥 Usuarios</h3>
+<div class="value">3,438,016</div>
+<div class="sub">1.70% conversión</div>
+</div>
+<div class="metric">
+<h3>⏱ Semanas</h3>
+<div class="value">22</div>
+<div class="sub">Período completo</div>
+</div>
+</div>
+
+<div class="section">
+<h2>🌎 Resumen por País</h2>
+<table>
+<thead><tr><th>País</th><th>GB USD</th><th>Revenue WL</th><th>FVM</th><th>Transacciones</th><th>% del Total</th></tr></thead>
+<tbody>
+<tr><td><strong>Chile</strong></td><td>$45,547,184</td><td>$3,799,420</td><td>$591,532</td><td>37,404</td><td><span class='badge-sm badge-info'>74.6%</span></td></tr><tr><td><strong>Peru</strong></td><td>$15,488,310</td><td>$1,823,512</td><td>$681,612</td><td>21,078</td><td><span class='badge-sm badge-info'>25.4%</span></td></tr></tbody></table>
+</div>
+
+<div class="section">
+<h2>🏆 Top 15 Partners (Acumulado 22 Semanas)</h2>
+<table>
+<thead><tr><th>Rank</th><th>Partner</th><th>País</th><th>GB USD</th><th>Revenue WL</th><th>Transacciones</th><th>% del Total</th></tr></thead>
+<tbody>
+<tr><td><strong>#1</strong></td><td>latam-cl</td><td>Chile</td><td>$24,158,508</td><td>$2,327,049</td><td>11,092</td><td><span class='badge-sm badge-success'>39.6%</span></td></tr><tr><td><strong>#2</strong></td><td>latam-pe</td><td>Peru</td><td>$6,921,517</td><td>$954,197</td><td>3,601</td><td><span class='badge-sm badge-success'>11.3%</span></td></tr><tr><td><strong>#3</strong></td><td>latam-cl-canje</td><td>Chile</td><td>$6,832,319</td><td>$680,744</td><td>7,222</td><td><span class='badge-sm badge-success'>11.2%</span></td></tr><tr><td><strong>#4</strong></td><td>bci-cl</td><td>Chile</td><td>$6,521,086</td><td>$111,878</td><td>13,624</td><td><span class='badge-sm badge-info'>10.7%</span></td></tr><tr><td><strong>#5</strong></td><td>bbva-pe-loyalty</td><td>Peru</td><td>$5,433,387</td><td>$444,914</td><td>14,275</td><td><span class='badge-sm badge-info'>8.9%</span></td></tr><tr><td><strong>#6</strong></td><td>scotiabankcl</td><td>Chile</td><td>$4,115,609</td><td>$322,310</td><td>3,342</td><td><span class='badge-sm badge-info'>6.7%</span></td></tr><tr><td><strong>#7</strong></td><td>latam-pe-canje</td><td>Peru</td><td>$1,810,359</td><td>$247,829</td><td>2,771</td><td><span class='badge-sm badge-info'>3.0%</span></td></tr><tr><td><strong>#8</strong></td><td>AG00046856</td><td>Chile</td><td>$1,512,539</td><td>$175,415</td><td>420</td><td><span class='badge-sm badge-info'>2.5%</span></td></tr><tr><td><strong>#9</strong></td><td>AG00045415</td><td>Peru</td><td>$1,227,864</td><td>$164,628</td><td>353</td><td><span class='badge-sm badge-info'>2.0%</span></td></tr><tr><td><strong>#10</strong></td><td>cajalosandes</td><td>Chile</td><td>$631,565</td><td>$26,978</td><td>692</td><td><span class='badge-sm badge-info'>1.0%</span></td></tr><tr><td><strong>#11</strong></td><td>AG00034702</td><td>Chile</td><td>$585,104</td><td>$60,089</td><td>183</td><td><span class='badge-sm badge-warning'>1.0%</span></td></tr><tr><td><strong>#12</strong></td><td>sky-cl</td><td>Chile</td><td>$551,653</td><td>$48,172</td><td>353</td><td><span class='badge-sm badge-warning'>0.9%</span></td></tr><tr><td><strong>#13</strong></td><td>AG00045641</td><td>Chile</td><td>$443,836</td><td>$36,140</td><td>338</td><td><span class='badge-sm badge-warning'>0.7%</span></td></tr><tr><td><strong>#14</strong></td><td>bice</td><td>Chile</td><td>$167,419</td><td>$7,776</td><td>116</td><td><span class='badge-sm badge-warning'>0.3%</span></td></tr><tr><td><strong>#15</strong></td><td>sky-pe</td><td>Peru</td><td>$95,183</td><td>$11,943</td><td>78</td><td><span class='badge-sm badge-warning'>0.2%</span></td></tr></tbody></table>
+</div>
+
+<div class="section">
+<h2>📅 Evolución Semanal</h2>
+<table>
+<thead><tr><th>Semana</th><th>GB USD</th><th>Revenue WL</th><th>Transacciones</th><th>GB/TX Promedio</th></tr></thead>
+<tbody>
+<tr><td><strong>Semana 1</strong></td><td>$1,393,448</td><td>$139,730</td><td>1,226.0</td><td>$1,137</td></tr><tr><td><strong>Semana 2</strong></td><td>$2,976,716</td><td>$292,652</td><td>2,753.0</td><td>$1,081</td></tr><tr><td><strong>Semana 3</strong></td><td>$4,253,688</td><td>$318,526</td><td>3,445.0</td><td>$1,235</td></tr><tr><td><strong>Semana 4</strong></td><td>$2,940,296</td><td>$281,976</td><td>2,828.0</td><td>$1,040</td></tr><tr><td><strong>Semana 5</strong></td><td>$2,747,573</td><td>$260,091</td><td>2,774.0</td><td>$990</td></tr><tr><td><strong>Semana 6</strong></td><td>$2,794,837</td><td>$261,630</td><td>3,080.0</td><td>$907</td></tr><tr><td><strong>Semana 7</strong></td><td>$3,080,668</td><td>$295,380</td><td>3,112.0</td><td>$990</td></tr><tr><td><strong>Semana 8</strong></td><td>$2,450,312</td><td>$232,630</td><td>2,687.0</td><td>$912</td></tr><tr><td><strong>Semana 9</strong></td><td>$2,673,777</td><td>$277,436</td><td>2,670.0</td><td>$1,001</td></tr><tr><td><strong>Semana 10</strong></td><td>$2,990,648</td><td>$294,198</td><td>3,068.0</td><td>$975</td></tr><tr><td><strong>Semana 11</strong></td><td>$2,256,463</td><td>$199,506</td><td>2,364.0</td><td>$955</td></tr><tr><td><strong>Semana 12</strong></td><td>$1,898,431</td><td>$175,767</td><td>2,190.0</td><td>$867</td></tr><tr><td><strong>Semana 13</strong></td><td>$7,002,246</td><td>$636,485</td><td>5,052.0</td><td>$1,386</td></tr><tr><td><strong>Semana 14</strong></td><td>$3,044,605</td><td>$278,613</td><td>2,635.0</td><td>$1,155</td></tr><tr><td><strong>Semana 15</strong></td><td>$1,939,043</td><td>$182,848</td><td>2,124.0</td><td>$913</td></tr><tr><td><strong>Semana 16</strong></td><td>$2,027,320</td><td>$176,880</td><td>2,132.0</td><td>$951</td></tr><tr><td><strong>Semana 17</strong></td><td>$4,113,462</td><td>$364,547</td><td>3,878.0</td><td>$1,061</td></tr><tr><td><strong>Semana 18</strong></td><td>$2,350,524</td><td>$210,952</td><td>2,583.0</td><td>$910</td></tr><tr><td><strong>Semana 19</strong></td><td>$2,628,030</td><td>$242,529</td><td>2,536.0</td><td>$1,036</td></tr><tr><td><strong>Semana 20</strong></td><td>$2,962,219</td><td>$268,044</td><td>2,708.0</td><td>$1,094</td></tr><tr><td><strong>Semana 21</strong></td><td>$2,243,602</td><td>$206,359</td><td>2,321.0</td><td>$967</td></tr><tr><td><strong>Semana 22</strong></td><td>$267,587</td><td>$26,153</td><td>316.0</td><td>$847</td></tr></tbody></table>
+</div>
+
+<div class="insights">
+<h2>💡 Insights Clave (22 Semanas)</h2>
+<ul>
+<li><strong>GB Total Acumulado:</strong> <span class="highlight">$61,035,494</span> en 22 semanas</li>
+<li><strong>Partner Líder:</strong> latam-cl (Chile) con $24,158,508 (<span class="highlight">39.6% del total</span>)</li>
+<li><strong>Top 3 Partners:</strong> Concentran el <span class="highlight">62.1%</span> del GB total</li>
+<li><strong>Distribución Geográfica:</strong> Chile 74.6% vs Perú 25.4%</li>
+<li><strong>Revenue Margin:</strong> 9.21% del GB</li>
+<li><strong>Tasa de Conversión:</strong> 1.70% (58,482 transacciones de 3,438,016 usuarios)</li>
+<li><strong>GB Promedio por TX:</strong> $1,044</li>
+<li><strong>Promedio Semanal:</strong> $2,774,341 GB por semana</li>
+<li><strong>Partners Activos:</strong> 23 partners diferentes en el período</li>
+</ul>
+</div>
+
+<div class="footer">
+<p style="font-size:1.2em;font-weight:600;margin-bottom:15px">Dashboard B2B2C - Análisis Completo Semanas 1-22 (2026)</p>
+<p style="margin:8px 0">Fuente: Metabase Card #142736 - WL B2B2C Semana CH-PE</p>
+<p style="margin:8px 0">335 registros procesados | Generado: 26 Mayo 2026</p>
+<p style="margin-top:15px;font-size:.9em;color:#999">Sistema actualizable - Próxima actualización: Semana 23</p>
+<p style="margin-top:10px;font-size:.85em;color:#999">© 2026 Dashboard B2B2C Analytics System</p>
+</div>
+</div>
+</div>
+</body>
+</html>
